@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Kairo AI Scanner</h1>
+
+  <h2>Adicionar Nova Empresa</h2>
+  <form id="empresaForm">
+    <label>Nome da Empresa:</label>
+    <input type="text" name="nome" /><br/><br/>
+
+    <label>Receita Anual (US$):</label>
+    <input type="number" name="receita" /><br/><br/>
+
+    <label>EBITDA (US$):</label>
+    <input type="number" name="ebitda" /><br/><br/>
+
+    <label>Churn (%):</label>
+    <input type="number" name="churn" /><br/><br/>
+
+    <label>LTV/CAC:</label>
+    <input type="number" name="ltv" step="0.1" /><br/><br/>
+
+    <button type="submit">Analisar com IA</button>
+  </form>
+
+  <div id="resultado">
+    <!-- Aqui vai aparecer a análise da IA -->
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
