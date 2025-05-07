@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Diário do Empreendedor</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Dashboard - Empresas Avaliadas</h1>
+
+  <!-- TABELA COM OS DADOS -->
+  <table id="tabelaEmpresas" border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Receita (US$)</th>
+        <th>EBITDA (US$)</th>
+        <th>Retenção (%)</th>
+        <th>LTV/CAC</th>
+        <th>Score IA</th>
+        <th>Recomendação</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Os dados virão via JavaScript -->
+    </tbody>
+  </table>
+
+  <!-- GRÁFICO -->
+  <canvas id="graficoScoreIA" width="600" height="400"></canvas>
+
+  <!-- VOLTAR PARA INDEX -->
+  <br><br>
+  <a href="index.html">Voltar para o formulário</a>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
