@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro Due Diligence</title>
+  <link rel="stylesheet" href="dd-style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastro Due Diligence</h1>
+    <form id="dueForm">
+      <label for="empresa">Empresa:</label>
+      <select id="empresa" name="empresa" required></select>
+
+      <label for="tipo">Tipo:</label>
+      <select id="tipo" name="tipo" required>
+        <option value="Financeiro">Financeiro</option>
+        <option value="Jurídico">Jurídico</option>
+        <option value="Contábil">Contábil</option>
+        <option value="Operacional">Operacional</option>
+        <option value="Ambiental">Ambiental</option>
+      </select>
+
+      <label for="item">Item:</label>
+      <select id="item" name="item" required>
+        <option value="contratos">contratos</option>
+        <option value="provisões">provisões</option>
+        <option value="contingências">contingências</option>
+        <option value="fluxo de caixa">fluxo de caixa</option>
+      </select>
+
+      <label for="status">Status:</label>
+      <select id="status" name="status" required>
+        <option value="Pendente">Pendente</option>
+        <option value="Em Andamento">Em Andamento</option>
+        <option value="Concluída">Concluída</option>
+        <option value="Com Risco">Com Risco</option>
+      </select>
+
+      <label for="comentario">Comentário:</label>
+      <input type="text" id="comentario" name="comentario" required/>
+
+      <label for="link_doc">Link do Documento:</label>
+      <input type="text" id="link_doc" name="link_doc" required/>
+
+      <label for="risco">Risco:</label>
+      <select id="risco" name="risco" required>
+        <option value="Baixo">Baixo</option>
+        <option value="Médio">Médio</option>
+        <option value="Alto">Alto</option>
+      </select>
+
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="msg"></p>
+  </div>
+  <script src="dd-script.js"></script>
+</body>
+</html>
