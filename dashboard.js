@@ -38,6 +38,7 @@ fetch(`https://api.airtable.com/v0/${airtableBaseId}/${tableName}`, {
       <td>${recomendacao}</td>
       <td>${rating}</td>
       <td>${approval}</td>
+      
       <td style="font-size: 20px">${cor}</td>
     </tr>`;
 
