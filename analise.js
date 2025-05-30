@@ -12,12 +12,14 @@ fetch(url, {
   .then(response => response.json())
   .then(data => {
     console.log(data);
-    const tbody = document.getElementById('dados-tabela');
 
-    let divAnalises = document.getElementById("analises");
-    let row = '';
+    const relatorioDiv = document.getElementById("relatorio-content");
+    const analiseDiv = document.getElementById("analise-content");
+
+    let relatorioHTML = '';
+    let analiseHTML = '';
+
     data.records.forEach(record => {
-      console.log('lendo dados...');
       const nome = record.fields['Nome'] || '-';
       const receita = record.fields['Receita (US$)'] || '-';
       const ebitda = record.fields['EBITDA (US$)'] || '-';
@@ -26,21 +28,38 @@ fetch(url, {
       const scoreIA = record.fields['Score IA'] || '-';
       const recomendacao = record.fields['Recomendação'] || '-';
       const analise = record.fields['Analise'] || '-';
+      const aIneficiencia = record.fields['A_ineficiencia'] || '-';
 
-      console.log(nome)
-      row += `
-      Nome : ${nome} <br/>
-      <p> Receita : ${receita} <br/> 
-        EBITDA : ${ebitda} <br/>
-        Churn : ${churn} <br/>
-        LTV/CAC : ${ltvCAC} <br/>
-        Score IA : ${scoreIA} </p>
-      
-      <p>Recomendação : <strong>${recomendacao}</strong> </p>
-      <p>Análise IA: <strong>${analise}</strong> </p>
-      <hr/`;
+      // Relatório completo
+      relatorioHTML += `
+        <div class="mb-4 p-3 border rounded bg-white shadow-sm">
+          <h5>${nome}</h5>
+          <p>
+            Receita: ${receita} <br/>
+            EBITDA: ${ebitda} <br/>
+            Churn: ${churn} <br/>
+            LTV/CAC: ${ltvCAC} <br/>
+            Score IA: ${scoreIA}
+          </p>
+          <p>Recomendação: <strong>${recomendacao}</strong></p>
+          <p>Análise IA: <strong>${analise}</strong></p>
+          <p class="ineficiencia">Análise de Ineficiência: <strong>${aIneficiencia}</strong></p>
+          <hr/>
+        </div>
+      `;
+
+      // Apenas Análise de Ineficiência
+      analiseHTML += `
+        <div class="mb-4 p-3 border rounded bg-white shadow-sm">
+          <h5>${nome}</h5>
+          <p class="ineficiencia">Análise de Ineficiência: <strong>${aIneficiencia}</strong></p>
+          <hr/>
+        </div>
+      `;
     });
-    divAnalises.innerHTML = row;
+
+    relatorioDiv.innerHTML = relatorioHTML;
+    analiseDiv.innerHTML = analiseHTML;
   })
   .catch(error => {
     console.error('Erro ao buscar dados do Airtable:', error);

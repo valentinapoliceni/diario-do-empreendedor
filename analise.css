@@ -1,17 +1,16 @@
+.ineficiencia {
+  color: #dc3545; /* Vermelho Bootstrap */
+  font-weight: bold;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+hr {
+  border-top: 1px solid #ccc;
+}
+
 body {
-  background-color: #f8f9fa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-h1 {
-  color: #343a40;
-}
-
-.table td, .table th {
-  vertical-align: middle;
-  text-align: center;
-}
-
-.table td:last-child {
-  text-align: left;
+  background-color: #f8f9fa; /* cinza claro */
 }

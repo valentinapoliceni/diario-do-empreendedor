@@ -12,8 +12,29 @@
 <body>
   <div class="container my-5">
     <h1 class="text-center mb-4">Relatório Gerencial</h1>
-    <div id="analises">...</div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="relatorio-tab" data-bs-toggle="tab" data-bs-target="#relatorio" type="button" role="tab" aria-controls="relatorio" aria-selected="true">Relatório</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="analise-tab" data-bs-toggle="tab" data-bs-target="#analise" type="button" role="tab" aria-controls="analise" aria-selected="false">Análise de Ineficiência</button>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content mt-4">
+      <div class="tab-pane fade show active" id="relatorio" role="tabpanel" aria-labelledby="relatorio-tab">
+        <div id="relatorio-content"></div>
+      </div>
+      <div class="tab-pane fade" id="analise" role="tabpanel" aria-labelledby="analise-tab">
+        <div id="analise-content"></div>
+      </div>
+    </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="analise.js"></script>
 </body>
 
